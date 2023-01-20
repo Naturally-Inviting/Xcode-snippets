@@ -1,0 +1,55 @@
+import ComposableArchitecture
+import SwiftUI
+
+public struct <#ReducerName#>: ReducerProtocol {
+    // MARK: - State
+    public struct State: Equatable {
+        
+    }
+    
+    // MARK: - Action
+    public enum Action {
+        case task
+    }
+    
+    // MARK: - Reducer Body
+    public var body: some ReducerProtocol<State, Action> {
+        Reduce { state, action in
+            switch action {
+            default:
+                return .none
+            }
+        }
+    }
+}
+
+// MARK: - View
+public struct <#ViewName#>: View {
+    let store: StoreOf<<#ReducerName#>>
+    @ObservedObject var viewStore: ViewStoreOf<<#ReducerName#>>
+    
+    public init(
+        store: StoreOf<<#ReducerName#>>
+    ) {
+        self.store = store
+        self.viewStore = ViewStore(self.store)
+    }
+    
+    public var body: some View {
+        VStack {
+            Text("My View")
+        }
+    }
+}
+
+// MARK: - Preview
+struct <#ViewName#>_Previews: PreviewProvider {
+    static var previews: some View {
+        <#ViewName#>(
+            store: .init(
+                initialState: .init(),
+                reducer: <#ReducerName#>()
+            )
+        )
+    }
+}
