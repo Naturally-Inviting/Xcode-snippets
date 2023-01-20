@@ -14,7 +14,7 @@ public struct <#ReducerName#>: ReducerProtocol {
     
     // MARK: - Reducer Body
     public var body: some ReducerProtocol<State, Action> {
-        Reduce { state, action in
+        Reduce<State, Action> { state, action in
             switch action {
             default:
                 return .none
