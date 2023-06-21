@@ -4,11 +4,11 @@ import SwiftUI
 public struct <#ReducerName#>: ReducerProtocol {
     // MARK: - State
     public struct State: Equatable {
-        
+        public init() {}
     }
     
     // MARK: - Action
-    public enum Action {
+    public enum Action: Equatable {
         case task
     }
     
