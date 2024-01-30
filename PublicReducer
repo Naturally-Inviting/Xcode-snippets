@@ -42,15 +42,13 @@ public struct <#ViewName#>: View {
 }
 
 #Preview {
-    static var previews: some View {
-        <#ViewName#>(
-            store: .init(
-                initialState: .init(),
-                reducer: {
-                    <#ReducerName#>()
-                        ._printChanges()
-                }
-            )
+    <#ViewName#>(
+        store: .init(
+            initialState: .init(),
+            reducer: {
+                <#ReducerName#>()
+                    ._printChanges()
+            }
         )
-    }
+    )
 }
