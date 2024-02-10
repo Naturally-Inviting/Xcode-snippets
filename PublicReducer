@@ -11,6 +11,8 @@ public struct <#ReducerName#>: Reducer {
     public enum Action: Equatable {
         case task
     }
+
+    public init() {}
     
     public var body: some Reducer<State, Action> {
         Reduce<State, Action> { state, action in
