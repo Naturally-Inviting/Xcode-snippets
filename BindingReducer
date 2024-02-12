@@ -2,16 +2,18 @@ import ComposableArchitecture
 import SwiftUI
 
 @Reducer
-public struct <#ReducerName#>: Reducer {
+public struct <#ReducerName#> {
     @ObservableState
     public struct State: Equatable {
         public init() {}
     }
     
-    public enum Action: Equatable, BindableAction {
+    public enum Action: BindableAction {
         case binding(BindingAction<State>)
         case task
     }
+
+    public init() {}
     
     public var body: some Reducer<State, Action> {
         BindingReducer()
